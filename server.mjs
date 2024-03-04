@@ -16,7 +16,7 @@ const app = express();
 
  
 // export default function connectDB() {
-  const url = "mongodb+srv://uhurag:W8jp5AcRe9HCpMD1@cluster0.bzys91s.mongodb.net/ClassicMoviePicker";
+  const url = process.env.MONGO_URI;
  
   try {
     mongoose.connect(url, {
