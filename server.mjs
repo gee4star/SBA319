@@ -110,7 +110,7 @@ let movies=[{
 },{
     title:"Who's Afraid of Virginia Woolf?",
     year:1966,
-    director:"Moke Nichols",
+    director:"Mike Nichols",
 },{
     title:"The Good, the Bad and the Ugly",
     year:1966,
@@ -170,9 +170,9 @@ let IMBD=[{
 // create: app.post
 app.post("/movies", async (req, res) => {
     const movie = new MovieModel({
-        title:"Rope",
-                year:1948,
-             director:"Alfred Hitchcock",
+        title:"High and Low",
+        year:1963,
+        director:"Akira Kurosawa",
     })
     // let collection = await db.collection("Movies");
     // let result=await collection.insertMany(
@@ -286,28 +286,32 @@ app.get(`/`, async (req, res) => {
  }
 })
 
-// update: app.put
-// app.put("/comment/:id", async (req, res) => {
-//     const query = { _id: ObjectId("65e510309f60756548eb8fdc") };
-//     const updates = {
-//         $push: { comments: req.body },
-//     };
-//     let collection = await db.collection("post");
-//     let result = await collection. updateOne(query, updates);
-//     res.send(result).status(200);
-// });
+//update: app.put
+app.put("/:id", async (req, res) => {
+    const query = { _id: "65e50e97b0a01ad1afe45c80" };
+
+    const update = {
+            title: "JAWS2",
+            year: 1975,
+            director: "Stephen Speilberg", 
+
+    };
+    let collection = await MovieModel;
+    let result = await collection.findOneAndUpdate(query, update);
+    res.send(result).status(200);
+});
 
 
 
-// // delete: app.delete
-// app.delete("/:id", async (req, res) => {
-//     const query = { _id: ObjectId("65e510309f60756548eb8fdc") };
+ // delete: app.delete
+app.delete("/:id", async (req, res) => {
+    const query = { _id: "65e50f1fcd09656750d77817" };
 
-//     const collection = MovieModel();
-//     let result = await collection.deleteOne(query);
+    const collection = MovieModel;
+    let result = await collection.deleteOne(query);
 
-//     res.send(result).status(200);
-// });
+    res.send(result).status(200);
+});
 
 
 // error handling middleware
