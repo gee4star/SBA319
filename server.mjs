@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import mongoose from 'mongoose';
 import MovieModel from "./models/movies.js";
 
+dotenv.config()
 let db;
 
 // configurations
@@ -44,9 +45,9 @@ const app = express();
 
 
 
-//Configurations
 
-dotenv.config();
+
+
 
 
 
@@ -286,27 +287,27 @@ app.get(`/`, async (req, res) => {
 })
 
 // update: app.put
-app.put("/comment/:id", async (req, res) => {
-    const query = { _id: ObjectId(req.params.id) };
-    const updates = {
-        $push: { comments: req.body },
-    };
-    let collection = await db.collection("post");
-    let result = await collection. updateOne(query, updates);
-    res.send(result).status(200);
-});
+// app.put("/comment/:id", async (req, res) => {
+//     const query = { _id: ObjectId("65e510309f60756548eb8fdc") };
+//     const updates = {
+//         $push: { comments: req.body },
+//     };
+//     let collection = await db.collection("post");
+//     let result = await collection. updateOne(query, updates);
+//     res.send(result).status(200);
+// });
 
 
 
-// delete: app.delete
-app.delete("/:id", async (req, res) => {
-    const query = { _id: ObjectId(req.params.id) };
+// // delete: app.delete
+// app.delete("/:id", async (req, res) => {
+//     const query = { _id: ObjectId("65e510309f60756548eb8fdc") };
 
-    const collection = db.collection("post");
-    let result = await collection.deleteOne(query);
+//     const collection = MovieModel();
+//     let result = await collection.deleteOne(query);
 
-    res.send(result).status(200);
-});
+//     res.send(result).status(200);
+// });
 
 
 // error handling middleware
