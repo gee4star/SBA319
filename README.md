@@ -7,6 +7,7 @@
 ### For the Get route, all the movie info is listed
 ### The Put route updates the list
 ### The Delete route deletes chosen information
+###Used code from https://blog.appsignal.com/2023/08/09/how-to-use-mongodb-and-mongoose-for-nodejs.html and various sections of our class lessons as a resource to create this project
 <img width="1425" alt="Screenshot 2024-03-04 at 7 54 39 AM" src="https://github.com/gee4star/SBA319/assets/151780860/bd8f3a6b-446b-4897-839d-2f45e4523d6f">
 
 <img width="1426" alt="Screenshot 2024-03-04 at 7 53 35 AM" src="https://github.com/gee4star/SBA319/assets/151780860/44f156ad-861d-4537-92dd-2ecf568d7207">
